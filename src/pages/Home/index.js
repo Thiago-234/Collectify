@@ -20,6 +20,26 @@ export default function Home() {
                 </TouchableOpacity>
             </View>
 
+            <View style={styles.listaContainer}>
+                <View style={styles.item}>
+                    <View>
+                        <Image source={require('../../../assets/spiderman.png')} style={styles.capa} />
+                    </View>
+                    <View style={styles.descricao}>
+                        <Text style={styles.info}>Título: Homem Aranha</Text>
+                        <Text style={styles.info}>Preço: R$ 10,00</Text>
+                        <Text style={styles.info}>Ano: Indefinifo</Text>
+                        <Text style={styles.info}>Raridade: Raro</Text>
+
+                        <View style={styles.opcoes}>
+                            <Text style={styles.icon}>🗑️</Text>
+                            <Text style={styles.icon}>✏️</Text>
+                            <Text style={styles.icon}>♡</Text>
+                        </View>
+                    </View>
+                </View>
+            </View>
+
             <View style={styles.btnContainer}>
                 <TouchableOpacity style={styles.btnAdd} onPress={() => setModalAberto(true)}>
                     <Text style={styles.add}>+</Text>
@@ -66,6 +86,7 @@ export default function Home() {
             </Modal>
 
 
+
         </View>
 
     );
@@ -93,10 +114,9 @@ const styles = StyleSheet.create({
         width: 50,
     },
     btnContainer: {
-        flex: 1,
+        marginTop: 20,
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20,
     },
     btnAdd: {
         height: 60,
@@ -142,7 +162,7 @@ const styles = StyleSheet.create({
         borderColor: '#000',
         margin: 4,
     },
-    btnSalvar:{
+    btnSalvar: {
         height: 40,
         width: 250,
         borderRadius: 10,
@@ -150,11 +170,11 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    salvar:{
+    salvar: {
         color: '#fff',
         fontSize: 20,
     },
-    btnCancelar:{
+    btnCancelar: {
         height: 40,
         width: 250,
         borderRadius: 10,
@@ -163,8 +183,40 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
     },
-    cancelar:{
+    cancelar: {
         color: '#fff',
         fontSize: 20,
+    },
+    listaContainer: {
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        width: '100%',
+    },
+    item: {
+        borderWidth: 2,
+        width: '80%',
+        marginTop: 15,
+        flexDirection: 'row',
+    },
+    descricao: {
+        margin: 10,
+    },
+    info: {
+        fontSize: 15,
+        color: '#000',
+        fontFamily: 'ComicNeue',
+    },
+    opcoes: {
+        flexDirection: 'row',
+        width: 150,
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        marginTop: 10,
+        alignSelf: 'center',
+    },
+    icon:{
+        fontSize: 25,
+        color: '#000',
     }
 });
